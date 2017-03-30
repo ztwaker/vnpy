@@ -51,7 +51,8 @@ class KsgoldGateway(VtGateway):
         """连接"""
         # 载入json文件
         fileName = self.gatewayName + '_connect.json'
-        fileName = os.getcwd() + '\\ksgoldGateway\\' + fileName
+        path = os.path.abspath(os.path.dirname(__file__))
+        fileName = os.path.join(path, fileName)
         
         try:
             f = file(fileName)
@@ -109,8 +110,6 @@ class KsgoldGateway(VtGateway):
     #----------------------------------------------------------------------
     def close(self):
         """关闭"""
-        if self.mdConnected:
-            self.mdApi.close()
         if self.tdConnected:
             self.tdApi.close()
         

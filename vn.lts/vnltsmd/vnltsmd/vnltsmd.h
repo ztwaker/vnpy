@@ -1,7 +1,9 @@
 //说明部分
 
 //系统
+#ifdef WIN32
 #include "stdafx.h"
+#endif
 #include <string>
 #include <queue>
 
@@ -14,7 +16,7 @@
 #include <boost/python.hpp>			//python封装
 #include <boost/thread.hpp>			//任务队列的线程功能
 #include <boost/bind.hpp>			//任务队列的线程功能
-#include <boost/any.hpp>			//任务队列的任务实现
+#include <boost/any.hpp>			//任务队列的任务实现 
 
 //API
 #include "SecurityFtdcMdApi.h"
